@@ -1,0 +1,102 @@
+#!/data/data/com.termux/files/usr/bin/bash
+clear
+echo
+echo "\033[32m   porTed bY :--->"
+echo
+echo "\033[34m            #-------------------------#"
+echo "\033[33m            #   Lokesh:Hax4Us:€|eViL  #"
+echo "\033[34m            #:::::::::::::::::::::::::#"
+echo
+echo "\033[34m            #-------------------------#"
+echo "\033[33m            #  Nethunter Installer v1 #"
+echo "\033[33m            #  Ported For Termux From #"
+echo "\033[33m            #         madscript       #"
+echo "\033[34m            #-------------------------#"
+echo
+echo "\033[31mNote :- this script is ported (not copied) i dont think you are a copy cat who will copy my hard work :D"
+echo
+echo "\033[33mGood News :- you can reuse my script in your video or any other place without any modifications , i am watching you :D"
+echo
+echo "\033[32mPress Enter To Continue"
+read choice
+echo
+echo "Checking tsu ..."
+echo
+if [ -f $PREFIX/bin/tsu ]; then
+	echo "ok , tsu is installed" 
+else
+	echo "please install tsu package"
+	exit
+	fi
+
+who=`whoami`
+if [ $who = "root" ]; then
+	echo "\033[34mInstalling all essential apps ..."
+	echo "\033[32m"
+pm install Apks/BlueNMEA.apk
+pm install Apks/cSploit-release.apk
+pm install Apks/Drivedroid.apk
+pm install Apks/Hackerskeyboard.apk
+pm install Apks/OpenVPN.apk
+pm install Apks/RFAnalyzer.apk
+pm install Apks/RouterKeygen.apk
+pm install Apks/Shodan.apk
+pm install Apks/Term-nh.apk
+pm install Apks/USBKeyboard.apk
+pm install Apks/VNC-nh.apk
+pm install Apks/nethunter.apk
+echo "\033[33m"
+am start -a android.intent.action.MAIN -n com.offsec.nethunter/.AppNavHomeActivity
+sleep 40
+am force-stop com.offsec.nethunter
+sleep 5
+mount -o rw,remount /system
+mount -o rw,remount /data
+echo
+echo "\033[32m"
+cp /data/data/com.offsec.nethunter/files/scripts/bootkali /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/bootkali_bash /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/bootkali_env /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/bootkali_init /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/bootkali_login /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-fruity-wifi /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kaliapache /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalibeef-xss /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalidhcp /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalidnsmq /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalihostapd /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalimetasploit /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalissh /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalivnc /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-kalivpn /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/check-ycable /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/iptables-flush /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/killkali /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/pine-nano /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-apache /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-badusb-kitkat /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-badusb-lollipop /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-beef-xss /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-dhcp /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-dnsmasq /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-gpsd /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-hid-cmd /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-hid-cmd-elevated-win7 /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-hid-cmd-elevated-win8 /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-hostapd /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-iptables /system/bin
+cp /data/data/com.offsec.nethunter/files/scripts/start-msf /system/bin
+wget https://www.dropbox.com/s/3bryxqu3hjqps3n/kalifs-minimal.tar.xz?dl=1 --output-document=kalifs-minimal.tar.xz
+echo
+echo "\033[32m cleaning ..."
+rm -rf universal_nh
+echo "All was ok , now you can open nethunter app and install chroot from sdcard (select minimal not full)"
+echo
+echo "\033[31mWARNING:- DONT TRY TO IMSTALL CHROOT BY DOWNLOAD OPTION , YOU HAVE TO SELECT/CHOOSE ONLY SDCARD OPTION.\033[0m"
+
+
+	else 
+		echo
+		echo "\033[31mtsu is installed but also make sure you have root permissions (SuperSu is recommended)\033[0m"
+		fi
+
