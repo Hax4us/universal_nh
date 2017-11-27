@@ -33,18 +33,18 @@ who=`whoami`
 if [ $who = "root" ]; then
 	echo "\033[34mInstalling all essential apps ..."
 	echo "\033[32m"
-pm install Apks/BlueNMEA.apk
-pm install Apks/cSploit-release.apk
-pm install Apks/Drivedroid.apk
-pm install Apks/Hackerskeyboard.apk
-pm install Apks/OpenVPN.apk
-pm install Apks/RFAnalyzer.apk
-pm install Apks/RouterKeygen.apk
-pm install Apks/Shodan.apk
-pm install Apks/Term-nh.apk
-pm install Apks/USBKeyboard.apk
-pm install Apks/VNC-nh.apk
-pm install Apks/nethunter.apk
+pm install /sdcard/universal_nh/Apks/BlueNMEA.apk
+pm install /sdcard/universal_nh/Apks/cSploit-release.apk
+pm install /sdcard/universal_nh/Apks/Drivedroid.apk
+pm install /sdcard/universal_nh/Apks/Hackerskeyboard.apk
+pm install /sdcard/universal_nh/Apks/OpenVPN.apk
+pm install /sdcard/universal_nh/Apks/RFAnalyzer.apk
+pm install /sdcard/universal_nh/Apks/RouterKeygen.apk
+pm install /sdcard/universal_nh/Apks/Shodan.apk
+pm install /sdcard/universal_nh/Apks/Term-nh.apk
+pm install /sdcard/universal_nh/Apks/USBKeyboard.apk
+pm install /sdcard/universal_nh/Apks/VNC-nh.apk
+pm install /sdcard/universal_nh/Apks/nethunter.apk
 echo "\033[33m"
 am start -a android.intent.action.MAIN -n com.offsec.nethunter/.AppNavHomeActivity
 sleep 40
